@@ -1,0 +1,203 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  padding: 10px;
+  background-color: #000;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 20px;
+  height: 550px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  color: #000;
+  overflow: hidden;
+}
+
+/* Efectos animados de fondo */
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 700px;
+  height: 550px;
+  background: linear-gradient(0deg, transparent, transparent, #1f278f, #ffe100, #1f278f);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.container::after {
+  animation-delay: -3s;
+}
+
+.borderline {
+  position: absolute;
+  top: 0;
+  inset: 0;
+}
+
+.borderline::before,
+.borderline::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 700px;
+  height: 550px;
+  background: linear-gradient(0deg, transparent, transparent, #ffe100, #1f278f, #ffe100);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.borderline::after {
+  animation-delay: -4.5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Formulario */
+.container form {
+  position: absolute;
+  inset: 4px;
+  background: #000000;
+  padding: 50px 40px;
+  border-radius: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .titulo {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  z-index: 3;
+}
+
+.container .titulo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+}
+
+/* Detalles del usuario */
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .detalles {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.user-details .input-box input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  border: 2px solid #ccc;
+  box-shadow: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  border-radius: 5px 15px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #1c1c1c;
+}
+
+.user-details form .input-box input:valid ~ i,
+.user-details form .input-box input:focus ~ i {
+  height: 44px;
+}
+
+/* Botón de envío */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 200%;
+  width: 100%;
+  outline: none;
+  color: #ccc;
+  border: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  background: #000000;
+}
+
+form .button input:hover {
+  background: #000;
+}
+
+/* Responsividad */
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .genero .categoria {
+    width: 100%;
+  }
+
+  .container form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 0;
+  }
+}

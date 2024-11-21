@@ -1,0 +1,39 @@
+/* Estilos generales para la página de inicio */
+ion-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh; /* Asegura que el contenido ocupe toda la altura de la pantalla */
+}
+
+
+ion-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+
+  .card-image {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: 200px; /* Altura fija, ajusta según lo que necesites */
+    object-fit: cover; /* Hace que la imagen se recorte proporcionalmente */
+    border-top-left-radius: 12px; /* Coincide con el borde de la card */
+    border-top-right-radius: 12px;
+  }
+
+  ion-card-header {
+    margin-top: 16px; /* Separación entre la imagen y el contenido */
+    text-align: center;
+  }
+
+  ion-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  ion-card-content {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+

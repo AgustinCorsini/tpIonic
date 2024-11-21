@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- Línea divisoria -->
+    <span class="borderline"></span>
+    <div class="titulo">Registro</div>
+
+    <!-- Formulario de Registro -->
+    <form (ngSubmit)="onRegister()">
+      <div class="user-details">
+
+        <!-- Nombre Completo -->
+        <ion-item>
+          <ion-label position="floating">Nombre Completo</ion-label>
+          <ion-input type="text" placeholder="Ingresa tu nombre" [(ngModel)]="form.name" name="name" required></ion-input>
+        </ion-item>
+
+        <!-- Rol de Usuario -->
+        <ion-item>
+          <ion-label position="floating">Rol de Usuario</ion-label>
+          <ion-input type="text" placeholder="Ingresa tu rol de usuario" [(ngModel)]="form.role" name="role" required></ion-input>
+        </ion-item>
+
+        <!-- Correo -->
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="email" placeholder="Ingresa tu correo" [(ngModel)]="form.email" name="email" required></ion-input>
+        </ion-item>
+
+        <!-- Contraseña -->
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" placeholder="Ingresa una Contraseña" [(ngModel)]="form.password" name="password" required></ion-input>
+        </ion-item>
+
+      </div>
+
+      <!-- Botón de Registro -->
+      <ion-button expand="block" type="submit" [disabled]="!form.name || !form.role || !form.email || !form.password">Registrarme</ion-button>
+    </form>
+  </div>
+</ion-content>

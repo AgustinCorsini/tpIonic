@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/tab1">Inicio</ion-item>
+        <ion-item routerLink="/tab2">Productos</ion-item>
+        <ion-item routerLink="/contacto">Contacto</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+</ion-app>

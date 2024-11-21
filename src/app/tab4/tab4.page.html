@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- Línea divisoria -->
+    <span class="borderline"></span>
+    <div class="titulo">Iniciar Sesion</div>
+
+    <!-- Formulario de Registro -->
+    <form (ngSubmit)="onRegister()">
+      <div class="user-details">
+
+        <!-- Nombre Completo -->
+        <ion-item>
+          <ion-label position="floating">Ingrese Email</ion-label>
+          <ion-input type="text" placeholder="Ingresa tu nombre" [(ngModel)]="form.name" name="name" required></ion-input>
+        </ion-item>
+
+        <!-- Rol de Usuario -->
+        <ion-item>
+          <ion-label position="floating">Ingrese su contraseña</ion-label>
+          <ion-input type="text" placeholder="Ingresa tu rol de usuario" [(ngModel)]="form.role" name="role" required></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Botón de Registro -->
+      <ion-button>Iniciar Sesion</ion-button>
+    </form>
+  </div>
+</ion-content>
